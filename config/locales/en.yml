@@ -1,0 +1,4 @@
+en:
+  invitable:
+    success: 'Thank-you'
+    failure: 'There was an error, please try again'

@@ -16,12 +16,7 @@
 
 $(function() {
   $('form').live('ajax:success', function(xhr, data, status) {
-    //var message;
-    //if (data === 'true') {
-      //message = 'Thank-you';
-    //} else {
-      //message = 'There was an error, please try again';
-    //}
-    //$('#flash').text(message);
+    data = $.parseJSON(data);
+    $('body').append(data.message);
   });
 })

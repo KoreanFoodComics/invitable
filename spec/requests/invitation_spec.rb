@@ -25,11 +25,10 @@ feature 'Requesting an invite' do
     fill_in 'Email', :with => 'alincoln@example.com'
     click_button 'Submit'
 
-    page.should_not have_content 'Thank-you'
-    binding.pry
+    page.should have_content 'Thank-you'
   end
 
-  scenario 'with invalid data and non-js', :js => true do
+  scenario 'with invalid data and js', :js => true do
     click_button 'Submit'
 
     page.should have_content 'There was an error, please try again'
