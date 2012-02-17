@@ -6,6 +6,7 @@ require 'rspec/rails'
 require 'capybara/rspec'
 require 'capybara/webkit'
 require 'valid_attribute'
+require 'factory_girl_rails'
 require 'pry'
 
 ENGINE_RAILS_ROOT=File.join(File.dirname(__FILE__), '../')
@@ -18,4 +19,5 @@ Capybara.javascript_driver = :webkit
 
 RSpec.configure do |config|
   config.use_transactional_fixtures = true
+  config.include Factory::Syntax::Methods
 end
