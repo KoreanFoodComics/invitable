@@ -16,7 +16,6 @@
 
 $(function() {
   $('form').live('ajax:success', function(xhr, data, status) {
-    data = $.parseJSON(data);
     $('body').append(data.message);
   });
 })

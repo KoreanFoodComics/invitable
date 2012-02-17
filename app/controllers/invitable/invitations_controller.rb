@@ -7,11 +7,11 @@ module Invitable
         if @invitation.save
           message = I18n.t :success, :scope => [:invitable]
           format.html { redirect_to main_app.root_path, :notice => message }
-          format.js   { render :json => { :success => true, :message => message } }
+          format.js   { render :json => { :success => true, :message => message }, :content_type => 'application/json' }
         else
           message = I18n.t :failure, :scope => [:invitable]
           format.html { redirect_to main_app.root_path, :alert => message }
-          format.js   { render :json => { :success => false, :message => message } }
+          format.js   { render :json => { :success => false, :message => message }, :content_type => 'application/json' }
         end
       end
     end
