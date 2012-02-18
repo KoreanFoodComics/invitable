@@ -11,25 +11,25 @@ describe Invitable::Engine do
 
   describe 'controller_path' do
     it 'returns the path to the named engine controller' do
-      Invitable::Engine.controller_path(:test_controller).should eq '/app/controllers/invitable/test_controller'
+      Invitable::Engine.controller_path(:test_controller).should eq '/app/controllers/invitable/test_controller.rb'
     end
   end
 
   describe 'helper_path' do
     it 'returns the path to the named engine helper' do
-      Invitable::Engine.helper_path(:test_helper).should eq '/app/helpers/invitable/test_helper'
+      Invitable::Engine.helper_path(:test_helper).should eq '/app/helpers/invitable/test_helper.rb'
     end
   end
 
   describe 'mailer_path' do
     it 'returns the path to the named engine mailer' do
-      Invitable::Engine.mailer_path(:test_mailer).should eq '/app/mailers/invitable/test_mailer'
+      Invitable::Engine.mailer_path(:test_mailer).should eq '/app/mailers/invitable/test_mailer.rb'
     end
   end
 
   describe 'model_path' do
     it 'returns the path to the named engine model' do
-      Invitable::Engine.model_path(:test_model).should eq '/app/models/invitable/test_model'
+      Invitable::Engine.model_path(:test_model).should eq '/app/models/invitable/test_model.rb'
     end
   end
 end

@@ -13,7 +13,7 @@ module Invitable
     %w{controller helper mailer model}.each do |resource|
       class_eval <<-RUBY
         def self.#{resource}_path(name)
-          File.expand_path("#{resource.pluralize}/invitable/\#{name}", app_path)
+          File.expand_path("#{resource.pluralize}/invitable/\#{name}.rb", app_path)
         end
       RUBY
     end
