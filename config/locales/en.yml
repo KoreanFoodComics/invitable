@@ -2,3 +2,4 @@ en:
   invitable:
     success: 'Thank-you'
     failure: 'There was an error, please try again'
+    thank_you_subject: 'Thank-you for signing up!'

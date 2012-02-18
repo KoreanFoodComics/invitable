@@ -4,7 +4,7 @@ module Invitable
 
     def thank_you(id)
       @invitation = Invitation.find(id)
-      mail(:to => @invitation.email, :subject => 'Thank-you for signing up!')
+      mail(:to => @invitation.email, :subject => I18n.t(:thank_you_subject, :scope => [:invitable]))
     end
   end
 end
