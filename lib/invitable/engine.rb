@@ -10,12 +10,12 @@ module Invitable
       File.expand_path('../../app', called_from)
     end
 
-    class << self
-      %w{controller helper mailer model}.each do |resource|
-        define_method "#{resource}_path" do |name|
-          File.expand_path("#{resource.pluralize}/invitable/#{name}", app_path)
+    %w{controller helper mailer model}.each do |resource|
+      class_eval <<-RUBY
+        def self.#{resource}_path(name)
+          File.expand_path("#{resource.pluralize}/invitable/\#{name}", app_path)
         end
-      end
+      RUBY
     end
 
   end
