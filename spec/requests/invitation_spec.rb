@@ -10,7 +10,6 @@ feature 'Requesting an invite' do
   end
 
   scenario 'with valid data and non-js' do
-    fill_in 'Name', :with => 'Abraham Lincoln'
     fill_in 'Email', :with => 'alincoln@example.com'
     click_button 'Submit'
 
@@ -27,7 +26,6 @@ feature 'Requesting an invite' do
   end
 
   scenario 'with valid data and js', :js => true do
-    fill_in 'Name', :with => 'Abraham Lincoln'
     fill_in 'Email', :with => 'alincoln@example.com'
     click_button 'Submit'
 

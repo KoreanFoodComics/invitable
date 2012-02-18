@@ -14,7 +14,6 @@
 ActiveRecord::Schema.define(:version => 20120217012945) do
 
   create_table "invitable_invitations", :force => true do |t|
-    t.string   "name"
     t.string   "email"
     t.integer  "invitable_id"
     t.string   "invitable_type"
