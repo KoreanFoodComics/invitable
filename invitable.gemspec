@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.name        = 'invitable'
   s.version     = Invitable::VERSION
   s.authors     = ['Brian Cardarella']
-  s.email       = ['brian@dockyard.com']
+  s.email       = ['brian@dockyard.com', 'bcardarella@gmail.com']
   s.homepage    = 'https://github.com/dockyard/invitable'
   s.summary     = 'Invitable'
   s.description = 'Invitable'
