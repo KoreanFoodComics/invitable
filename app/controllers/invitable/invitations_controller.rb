@@ -1,5 +1,5 @@
 module Invitable
-  class InvitationsController < ApplicationController
+  class InvitationsController < ::ApplicationController
     def create
       @invitation = Invitation.new(params[:invitation])
 

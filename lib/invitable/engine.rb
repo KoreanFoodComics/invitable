@@ -6,16 +6,32 @@ module Invitable
       g.test_framework :rspec, :view_specs => false
     end
 
-    def self.app_path
-      File.expand_path('../../app', called_from)
-    end
-
-    %w{controller helper mailer model}.each do |resource|
-      class_eval <<-RUBY
-        def self.#{resource}_path(name)
-          File.expand_path("#{resource.pluralize}/invitable/\#{name}.rb", app_path)
+    unless respond_to?(:require_dependency)
+      def self.require_dependency(dependency)
+        _all_autoload_paths.each do |path|
+          file_path = File.join(path, "#{dependency}.rb")
+          if File.exist? file_path
+            load_or_require file_path
+            return
+          end
         end
-      RUBY
+
+        raise LoadError, "cannot find dependency -- #{dependency}"
+      end
+
+      private
+
+      def self.load_or_require(path)
+        if load?
+          load path
+        else
+          require path
+        end
+      end
+
+      def self.load?
+        !Rails.configuration.cache_classes
+      end
     end
 
   end
